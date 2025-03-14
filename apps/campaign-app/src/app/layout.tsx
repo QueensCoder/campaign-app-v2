@@ -1,4 +1,12 @@
 import './global.css';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 
 export const metadata = {
   title: 'Welcome to campaign-app',
@@ -12,7 +20,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <ClerkProvider>
+        <body>
+          {/* Clerk Buttons */}
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+
+          {/* Page Content */}
+          {children}
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
