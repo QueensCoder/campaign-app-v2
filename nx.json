@@ -50,6 +50,23 @@
       "options": {
         "targetName": "test"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nxlv/python"
     }
   ],
   "targetDefaults": {
@@ -62,6 +79,9 @@
       "application": {
         "style": "tailwind",
         "linter": "eslint"
+      },
+      "@nxlv/python:poetry-project": {
+        "projectNameAndRootFormat": "as-provided"
       }
     }
   }

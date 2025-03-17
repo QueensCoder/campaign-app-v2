@@ -23,6 +23,7 @@ export default function RootLayout({
       <ClerkProvider>
         <body>
           {/* Clerk Buttons */}
+
           <SignedOut>
             <SignInButton />
             <SignUpButton />
@@ -30,7 +31,6 @@ export default function RootLayout({
           <SignedIn>
             <UserButton />
           </SignedIn>
-
           {/* Page Content */}
           {children}
         </body>
